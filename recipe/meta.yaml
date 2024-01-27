@@ -1,5 +1,5 @@
 {% set name = "flux-restful-client" %}
-{% set version = "0.1.14" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flux-restful-client-{{ version }}.tar.gz
-  sha256: ca73fea587f301f5fb2a5c622f868011be5c0a40e68678020dd42c4726379ee3
+  sha256: 8190720ae9bace70abafe82b32a217d44976a52ab48c1aff17c3a604b7018f52
 
 build:
   entry_points:
