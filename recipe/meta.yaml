@@ -27,6 +27,7 @@ requirements:
     - requests
     - jsonschema
     - python-jose
+    - httpx
 
 test:
   imports:
