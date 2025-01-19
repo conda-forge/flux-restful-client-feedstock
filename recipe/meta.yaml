@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flux-restful-client-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flux-restful-client-{{ version }}.tar.gz
   sha256: 8190720ae9bace70abafe82b32a217d44976a52ab48c1aff17c3a604b7018f52
 
 build:
@@ -14,15 +14,15 @@ build:
     - flux-restful-cli=flux_restful_client.client:run_flux_restful_client
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pytest-runner
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - ruamel.yaml
     - requests
     - jsonschema
@@ -37,6 +37,7 @@ test:
     - flux-restful-cli --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/flux-framework/flux-restful-api/tree/main/clients/python
